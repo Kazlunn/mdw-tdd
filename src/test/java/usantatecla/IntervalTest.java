@@ -67,12 +67,10 @@ public class IntervalTest {
   }
 
   @Test
-  public void givenTwoIntervalIntersectionWhenFirstIncludeSecondThenTrue() {
-    Interval firstInterval = this.intervalBuilder.closed(left.getEquals()).closed(right.getEquals()).build();
-    this.intervalBuilder = new IntervalBuilder();
-    Interval secondInterval = this.intervalBuilder.closed(new Point(-2.2).getEquals()).closed(new Point(4.4).getEquals()).build();
+  public void givenTwoIntervalIntersectionWhenBothAreTheSameThenTrue() {
+    Interval interval = this.intervalBuilder.closed(left.getEquals()).closed(right.getEquals()).build();
 
-    assertTrue(firstInterval.intersection(secondInterval));
+    assertTrue(interval.intersection(interval));
   }
 
   @Test
