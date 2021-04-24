@@ -71,6 +71,7 @@ public class IntervalTest {
   @Test
   public void givenTwoIntervalIntersectionWhenFirstIncludeSecondThenTrue() {
     Interval firstInterval = this.intervalBuilder.closed(left.getEquals()).closed(right.getEquals()).build();
+    this.intervalBuilder = new IntervalBuilder();
     Interval secondInterval = this.intervalBuilder.closed(left2.getEquals()).closed(right2.getEquals()).build();
 
     assertTrue(firstInterval.intersection(secondInterval));
