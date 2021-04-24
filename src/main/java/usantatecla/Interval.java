@@ -16,7 +16,15 @@ public class Interval {
 	}
 
 	public boolean intersection(Interval interval) {
-		return true;
+		return this.include(interval.getMin().value);
+	}
+
+	public Min getMin() {
+		return min;
+	}
+
+	public Max getMax() {
+		return max;
 	}
 
 	@Override
