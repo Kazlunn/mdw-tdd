@@ -100,4 +100,13 @@ public class IntervalTest {
     assertTrue(firstInterval.intersection(secondInterval));
   }
 
+  @Test
+  public void givenTwoIntervalsWhenInterval2IncludeInterval1ThenTrue() {
+    Interval firstInterval = this.intervalBuilder.closed(new Point(-2.0).getEquals()).closed(new Point(2.0).getEquals()).build();
+    this.intervalBuilder = new IntervalBuilder();
+    Interval secondInterval = this.intervalBuilder.closed(new Point(-4.0).getEquals()).closed(new Point(4.0).getEquals()).build();
+
+    assertTrue(firstInterval.intersection(secondInterval));
+  }
+
 }
