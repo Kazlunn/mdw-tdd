@@ -12,7 +12,11 @@ public class Interval {
 	}
 
 	public boolean include(double value) {
-			return this.min.isWithin(value) && this.max.isWithin(value);
+		return this.min.isWithin(value) && this.max.isWithin(value);
+	}
+
+	public boolean intersection(Interval interval) {
+		return false;
 	}
 
 	@Override
