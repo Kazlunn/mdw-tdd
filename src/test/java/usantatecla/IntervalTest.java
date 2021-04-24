@@ -82,4 +82,13 @@ public class IntervalTest {
     assertFalse(firstInterval.intersection(secondInterval));
   }
 
+  @Test
+  public void givenTwoIntervalsWhenInterval1IntersectionInterval2WithMax2IncludedThenTrue() {
+    Interval firstInterval = this.intervalBuilder.closed(new Point(-2.0).getEquals()).closed(new Point(2.0).getEquals()).build();
+    this.intervalBuilder = new IntervalBuilder();
+    Interval secondInterval = this.intervalBuilder.closed(new Point(-5.0).getEquals()).closed(new Point(1.0).getEquals()).build();
+
+    assertTrue(firstInterval.intersection(secondInterval));
+  }
+
 }
