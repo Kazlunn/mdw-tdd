@@ -16,7 +16,7 @@ public class Interval {
 	}
 
 	public boolean intersection(Interval interval) {
-		return this.include(interval.getMin().value);
+		return this.include(interval.getMin().value) || this.include(interval.getMax().value);
 	}
 
 	public Min getMin() {
